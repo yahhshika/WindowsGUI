@@ -131,6 +131,9 @@
 
 
 }
+.savebtn{
+    cursor: pointer;
+}
 .rows{
     cursor: pointer;
 }
