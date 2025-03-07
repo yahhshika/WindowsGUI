@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="/styleNotepad.css">
+</head>
+<body class="work-sans">
+    <div class="upper">
+
+        <div class="items">
+            
+            <div class="itma calc">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div class="itma notepad">
+                <i class="fa-solid fa-clipboard"></i>
+            </div>
+            <div class="itma design">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+
+        </div>
+    </div>
+    <div class="imgOuter opacity0">
+
+        <i class="fa-solid fa-xmark imagesEnd"></i>
+        <div class="images">
+            
+            <% for(img of images) { %>
+                <div class="img">
+                    <img src="<%=img.url%>" alt="img" class="indiImg">
+    
+                </div>
+            <% } %>
+        </div>
+        <h3 class="work-sans set">Click Here Set Random Backgrounds</h3>
+    </div>
+    <div class="lower">
+        <div class="temp">
+            <div class="cloud">
+                <i class="fa-solid fa-cloud"></i>
+            </div>
+            <div class="degree work-sans">
+                26&deg;C
+                <br>Sunny
+            </div>
+            
+
+        </div>
+        <div class="options">
+            <i class="fa-brands fa-windows"></i>
+            <form action="/" method="get" class="search">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                <input type="search" name="search" placeholder="Search">
+            </form>
+            <div class="calc itmopt">
+                <i class="fa-solid fa-calculator"></i>
+            </div>
+            <div class="notepad itmopt">
+                <i class="fa-solid fa-clipboard"></i>
+            </div>
+            <div class="design itmopt">
+                <i class="fa-solid fa-palette"></i>
+            </div>
+           
+
+        </div>
+        <div class="status work-sans">
+            <div class="time">
+
+            </div>
+            <div class="date">
+
+            </div>
+
+        </div>
+    </div>
+
+    <div class="calculator opacity0">
+        <div class="heading">
+            <span class="sora">
+                CALCULATOR
+            </span>
+            <i class="fa-solid fa-xmark calcEnd"></i>
+        </div>
+        <input type="text" class="calcip">
+        <button class="calcbtn calcbtnC">C</button>
+        <div class="row">
+            <button class="calcbtn">(</button>
+            <button class="calcbtn">)</button>
+            <button class="calcbtn">[</button>
+            <button class="calcbtn calcbtnC">]</button>
+        </div>
+        <div class="row">
+            <button class="calcbtn">7</button>
+            <button class="calcbtn">8</button>
+            <button class="calcbtn">9</button>
+            <button class="calcbtn calcbtnC">*</button>
+        </div>
+        <div class="row">
+            <button class="calcbtn">4</button>
+            <button class="calcbtn">5</button>
+            <button class="calcbtn">6</button>
+            <button class="calcbtn calcbtnC">-</button>
+        </div>
+        <div class="row">
+            <button class="calcbtn">1</button>
+            <button class="calcbtn">2</button>
+            <button class="calcbtn">3</button>
+            <button class="calcbtn calcbtnC">+</button>
+        </div>
+        <div class="row">
+            <button class="calcbtn">0</button>
+            <button class="calcbtn">.</button>
+            <button class="calcbtn">/</button>
+            <button class="calcbtn calcbtnC">=</button>
+        </div>
+    </div>
+
+
+    <div class="texteditor opacity0">
+        <div class="insidetext">
+            <div class="divname" style="font-weight: 600;">
+                Notepad
+
+            </div>
+            <div class="optnote">
+                <div class="insideoptnote">
+                    <span class="btn edit opacity0"></span>
+                    <span class="btn"><a href="/" style="color: black;">Reload</a></span>
+                    <span class="btn allfiles">All files</span>
+                
+                </div>
+                <div class="modes">
+                    <i class="fa-solid fa-moon"></i>
+
+                </div>
+
+            </div>
+            <div class="form">
+                <form  method="post" action="/new/file" class="writing">
+                    <input type="text" placeholder="File Name..." name="name" class="ip input1 work-sans">
+                    <textarea type="text" name="msg" class="textip noresize ip work-sans" placeholder="Start Typing..."></textarea>
+                    <button class="work-sans ip savebtn" style="font-size: large; font-weight: 700; background-color: #bbbbbb;">S a v e</button>
+                </form>
+            </div>
+        </div>
+        <i class="fa-solid fa-xmark endtextedit"></i>
+        
+    </div>
+    <div class="showfiles opacity0">
+        <div class="insideshowfiles">
+            
+            <table>
+                <tr>
+                    <th>File Name</th>
+                    <th>Content</th>
+                    <th>Last Edited</th>
+                </tr>
+                <%for(note of notes){ %>
+                    <tr class="rows">
+                        <td class="refnote" style="display: none;" data-msg="<%=note.msg%>"></td>
+                        <td class="tentry tentry1 work-sans"><%=note.name%></td>
+                        <td class="tentry tentry2 work-sans"><%=note.msg.toString().slice(0,10)%>...</td>
+                        <td class="tentry tentry3 work-sans"><%=note.createdAt.toString().split(" ").slice(0,3).join("-")%>, <%=note.createdAt.toString().split(" ")[4]%></td>
+                        <td class="deletefile"> 
+                            <form class="tentry" action="/delete/<%=note._id%>?_method=DELETE" method="post">
+                                <button type="submit" class="deletebtn"><i class="fa-solid fa-trash"></i></button>
+                            </form>
+                        </td>
+
+                    </tr>
+                <% } %>
+            </table>
+        </div>
+        <i class="fa-solid fa-xmark endshowFiles"></i>
+
+    </div>
+    
+    <script src="/script.js"></script>
+    <script src="/script2.js"></script>
+    <script src="/scriptNote.js"></script>
+    
+</body>
+</html>

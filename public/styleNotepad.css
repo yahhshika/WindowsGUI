@@ -1,0 +1,147 @@
+/* styles for notepad */
+.texteditor{
+    position: absolute;
+    top: 6rem;
+    left: 18rem;
+    border: 2px solid blue;
+    padding: 12px;
+    /* opacity: 0; */
+    background: aliceblue;
+    /* display: none; */
+
+    
+
+}
+.endtextedit{
+    position: absolute;
+    top: 3px;
+    right: 5px;
+}
+.endtextedit:hover{
+    color: brown;
+}
+.modes{
+    cursor: pointer;
+}
+.insidetext{
+    
+    font-size: larger;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: space-between; */
+    height: 426px;
+    width: 698px;
+    gap: 8px;
+}
+.optnote{
+    display: flex;
+    justify-content: space-between;
+    height: 31px;
+    /* padding-top: 10px; */
+    align-items: center;
+
+}
+.insideoptnote{
+    height: 100%;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 4px;
+}
+.form{
+    flex-grow: 1;
+}
+.writing{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 4px;
+}
+.textip{
+    flex-grow: 1;
+    text-align: justify;
+
+}
+.noresize{
+    resize: none;
+}
+.note{
+    display: flex;
+}
+
+
+
+
+
+.insideshowfiles{
+    height: 600px;
+    width: 500px;
+    overflow: auto;
+    
+     background-color: rgb(16, 16, 16);
+    color: white;
+    /* text-align: center; */
+     display: flex;
+    justify-content: center; 
+    padding: 12px;
+}
+.showfiles{
+    padding-top: 35px;
+    position: absolute;
+    top: 2rem;
+    left: 10rem;
+    background-color: grey;
+
+}
+.tentry1, .tentry2{
+    padding-right: 10px;
+}
+
+.endshowFiles{
+    position: absolute;
+    top: 7px;
+    right: 5px;
+    font-size: 18px;
+    padding: 3px;
+    border-radius: 4px;
+    cursor: pointer;
+
+}
+.endshowFiles:hover{
+     color: brown;
+}
+
+.ip{
+    padding: 12px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
+}
+.btn{
+    background-color: #bbbbbb;
+    padding: 4px;
+    border-radius: 7px;
+    /* margin-top: 10px; */
+    cursor: pointer;
+    color: black !important;
+
+   
+
+
+}
+.rows{
+    cursor: pointer;
+}
+.rows:hover{
+    background-color:rgb(48, 50, 51,0.7);
+}
+.deletebtn{
+    background-color: transparent;
+    color: white;
+    font-size: large;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
