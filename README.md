@@ -11,6 +11,6 @@ This is a Full Stack Based Project that depicts WINDOWS GUI on browser <br><br>
 2.4. Edit the existing notes by clicking on All files => respective note => edit button on the top left corner <br><br>
 
 3. Changing home screen background: <br>
-3.1. Click on the pallete button to see the available options
-3.2. Click on the desired background to apply
-3.3. Click on the "Click Here Set Random Backgrounds" to get random backgrounds
+3.1. Click on the pallete button to see the available options <br>
+3.2. Click on the desired background to apply <br>
+3.3. Click on the "Click Here Set Random Backgrounds" to get random backgrounds <br>
